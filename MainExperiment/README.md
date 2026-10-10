@@ -45,31 +45,19 @@ Recommended environment:
 - Windows with MSVC, MinGW/GCC, or Clang
 - Sufficient memory and disk bandwidth for the selected dataset
 
-The CMake configuration uses Release mode by default when no build type is specified. For GNU/Clang, the Release configuration enables:
-
-```text
--O3 -march=native -funroll-loops -ffast-math
-```
-
 ## Build
 
-From `\Krill\MainExperiment`:
+From `Krill/MainExperiment`, configure and build with CMake. The release optimization flags are already defined in `CMakeLists.txt`.
 
 ```powershell
-cmake -S . -B cmake-build-release -DCMAKE_BUILD_TYPE=Release
-cmake --build cmake-build-release --config Release -j
+cmake -S . -B cmake-build-release
+cmake --build cmake-build-release -j
 ```
 
 Run the executable:
 
 ```powershell
 .\cmake-build-release\Krill.exe
-```
-
-If CMake uses a Visual Studio generator, the executable may be under:
-
-```powershell
-.\cmake-build-release\Release\Krill.exe
 ```
 
 ## Datasets
@@ -92,8 +80,6 @@ The available dataset entries for reproduction are:
 > 
 > Download link placeholder:  https://www.kaggle.com/datasets/mkechinov/ecommerce-events-history-in-cosmetics-shop/
 
-
-
 2. Tenrec recommendation dataset
 
 > Tenrec is a large-scale multipurpose benchmark dataset for recommender systems where data was collected from two feeds (articles and videos) recommendation platforms.
@@ -104,8 +90,6 @@ The available dataset entries for reproduction are:
 > 
 > Yuan G, Yuan F, Li Y, et al. Tenrec: A large-scale multipurpose benchmark dataset for recommender systems[J]. Advances in Neural Information Processing Systems, 2022, 35: 11480-11493.
 
-
-
 3. SNAP Stack Overflow temporal network
 
 > This is a temporal network of interactions on the stack exchange web site Stack Overflow. 
@@ -115,8 +99,6 @@ The available dataset entries for reproduction are:
 > Citation: 
 > 
 > Ashwin Paranjape, Austin R. Benson, and Jure Leskovec. "Motifs in Temporal Networks." In Proceedings of the Tenth ACM International Conference on Web Search and Data Mining, 2017.
-
-
 
 Each loader converts raw records into (flow, element) pairs and updates exact statistics for ground truth.
 

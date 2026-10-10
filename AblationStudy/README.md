@@ -25,23 +25,17 @@ AblationStudy/
 
 ## Build
 
-From `\Krill\AblationStudy`:
+From `Krill/AblationStudy`, configure and build with CMake. The release optimization flags are already defined in `CMakeLists.txt`.
 
 ```powershell
-cmake -S . -B cmake-build-release -DCMAKE_BUILD_TYPE=Release
-cmake --build cmake-build-release --config Release -j
+cmake -S . -B cmake-build-release
+cmake --build cmake-build-release -j
 ```
 
 Run the executable:
 
 ```powershell
 .\cmake-build-release\KrillAblationStudy.exe
-```
-
-If CMake uses a Visual Studio generator, the executable may be under:
-
-```powershell
-.\cmake-build-release\Release\KrillAblationStudy.exe
 ```
 
 ## Datasets
