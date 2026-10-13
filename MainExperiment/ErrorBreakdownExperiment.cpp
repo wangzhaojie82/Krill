@@ -6,6 +6,8 @@
 #include "header/Krill.h"
 #include "header/ExactStats.h"
 #include "header/FLASKSketch.h"
+#include "header/CocoSketch.h"
+#include "header/DUET.h"
 #include "header/FlowEstimate.h"
 #include "header/PISketch.h"
 
@@ -245,6 +247,28 @@ void runDetectionErrorBreakdown(
             FLASKSketch sketch(memory_kb);
             updateSketch(sketch, loaded.data);
             printBreakdown(computeBreakdown("FLASK",
+                                            memory_kb,
+                                            sketch.collectEstimatesForEvaluation(
+                                                    loaded.exact_stats),
+                                            loaded.exact_stats,
+                                            config.tau_f_ratio,
+                                            config.tau_s));
+        }
+        {
+            CocoSketch sketch(memory_kb);
+            updateSketch(sketch, loaded.data);
+            printBreakdown(computeBreakdown("CocoSketch",
+                                            memory_kb,
+                                            sketch.collectEstimatesForEvaluation(
+                                                    loaded.exact_stats),
+                                            loaded.exact_stats,
+                                            config.tau_f_ratio,
+                                            config.tau_s));
+        }
+        {
+            DUET sketch(memory_kb);
+            updateSketch(sketch, loaded.data);
+            printBreakdown(computeBreakdown("DUET",
                                             memory_kb,
                                             sketch.collectEstimatesForEvaluation(
                                                     loaded.exact_stats),

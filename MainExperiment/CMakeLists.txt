@@ -14,6 +14,9 @@ add_executable(Krill
         PISketch.cpp
         CountMinVHLLBaseline.cpp
         FLASKSketch.cpp
+        CocoSketch.cpp
+        DUET.cpp
+        CUSketch.cpp
         StreamOrderExperiment.cpp
         ErrorBreakdownExperiment.cpp
         CountMin.cpp
@@ -24,6 +27,9 @@ add_executable(Krill
         header/PISketch.h
         header/CountMinVHLLBaseline.h
         header/FLASKSketch.h
+        header/CocoSketch.h
+        header/DUET.h
+        header/CUSketch.h
         header/StreamOrderExperiment.h
         header/ErrorBreakdownExperiment.h
         header/FlowEstimate.h

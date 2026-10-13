@@ -4,6 +4,8 @@
 #include "header/PISketch.h"
 #include "header/CountMinVHLLBaseline.h"
 #include "header/FLASKSketch.h"
+#include "header/CocoSketch.h"
+#include "header/DUET.h"
 #include "header/StreamOrderExperiment.h"
 #include "header/ErrorBreakdownExperiment.h"
 #include <algorithm>
@@ -56,6 +58,12 @@ int main() {
 
                     FLASKSketch flaskSketch(memory_kb);
                     flaskSketch.eval(loaded.data, loaded.exact_stats, tau_f_ratio_list, tau_s_list);
+
+                    CocoSketch cocoSketch(memory_kb);
+                    cocoSketch.eval(loaded.data, loaded.exact_stats, tau_f_ratio_list, tau_s_list);
+
+                    DUET duet(memory_kb);
+                    duet.eval(loaded.data, loaded.exact_stats, tau_f_ratio_list, tau_s_list);
 
         }
     }

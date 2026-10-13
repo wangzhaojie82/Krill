@@ -15,6 +15,9 @@ MainExperiment/
 |-- PISketch.cpp
 |-- CountMinVHLLBaseline.cpp
 |-- FLASKSketch.cpp
+|-- CocoSketch.cpp
+|-- DUET.cpp
+|-- CUSketch.cpp
 |-- StreamOrderExperiment.cpp
 |-- ErrorBreakdownExperiment.cpp
 |-- CountMin.cpp
@@ -26,6 +29,9 @@ MainExperiment/
     |-- PISketch.h
     |-- CountMinVHLLBaseline.h
     |-- FLASKSketch.h
+    |-- CocoSketch.h
+    |-- DUET.h
+    |-- CUSketch.h
     |-- StreamOrderExperiment.h
     |-- ErrorBreakdownExperiment.h
     |-- DatasetLoader.h
@@ -150,10 +156,10 @@ Configuration is in the `StreamOrderExperimentConfig` block in `main.cpp`.
 Set:
 
 ```cpp
-const bool run_error_breakdown = false;
+const bool run_error_breakdown = true;
 ```
 
-This prints detection error categories for Krill and baseline to the console. Adjust parameters in the  `ErrorBreakdownExperimentConfig` block.
+This prints detection error categories for Krill and baselines to the console. Adjust parameters in the `ErrorBreakdownExperimentConfig` block.
 
 ## Reproducing Results
 
